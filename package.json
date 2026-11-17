@@ -1,0 +1,54 @@
+{
+  "name": "ai-flow-viewer",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "ai-flow": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "NODE_OPTIONS='--max-old-space-size=1024' tsc -p viewer-ui --noEmit && NODE_OPTIONS='--max-old-space-size=1024' vite build",
+    "build:viewer": "NODE_OPTIONS='--max-old-space-size=1024' vite build",
+    "lint": "NODE_OPTIONS='--max-old-space-size=1024' eslint viewer-ui/src",
+    "test": "NODE_OPTIONS='--max-old-space-size=1024' vitest run",
+    "test:ui": "NODE_OPTIONS='--max-old-space-size=1024' vitest run",
+    "prepare": "pnpm run build",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^9.4.0",
+    "@tanstack/react-query": "^5.107.1",
+    "@tanstack/react-virtual": "^3.14.26",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "smol-toml": "^1.9.0",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "jsdom": "^30.1.3",
+    "rimraf": "^6.1.3",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.71.2",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.5"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

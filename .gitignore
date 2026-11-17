@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.vite/
+.eslintcache
+.vscode/
+*.tsbuildinfo
+package-lock.json
+
+# Machine-local config and runtime state (never commit)
+ai-flow.config.json
+.ai-flow/
+task/
+*.log
+
+# The task-dev skill ships as a separate (internal) repository. It may be
+# placed here — skills/task-dev is the default taskdev.skillDir — but it
+# must never be committed to this repository.
+skills/
